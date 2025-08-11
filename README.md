@@ -1,4 +1,4 @@
-# Домашнее задание к занятию "`Название занятия`" - `Фамилия и имя студента`
+# Домашнее задание к занятию "`Название занятия`" - `Боковиков Илья`
 
 
 ### Инструкция по выполнению домашнего задания
@@ -24,94 +24,51 @@
 
 ### Задание 1
 
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+![alt text](<img/Авторизация в админке.jpg>)
 
 ```
 Поле для вставки кода...
-....
-....
-....
-....
-```
+sudo apt update
+sudo apt install -y postgresql postgresql-contrib
+sudo systemctl start postgresql
+<!-- sudo systemctl enable postgresql -->
+sudo systemctl status postgresql
+sudo apt install -y apache2
+sudo systemctl start apache2
+sudo systemctl enable apache2
+sudo systemctl status apache2
+wget https://repo.zabbix.com/zabbix/6.4/debian/pool/main/z/zabbix-release/zabbix-release_6.4-1+debian11_all.deb
+sudo dpkg -i zabbix-release_6.4-1+debian11_all.deb
+sudo apt update
+sudo apt install -y zabbix-server-pgsql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+sudo -u postgres psql
+zcat /usr/share/doc/zabbix-sql-scripts/postgresql/create.sql.gz | psql -U zabbix -d zabbix
+sudo nano /etc/zabbix/zabbix_server.conf
+DBName=zabbix
+DBUser=zabbix
+DBPassword=пароль_тут
+sudo systemctl restart zabbix-server zabbix-agent apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
 
 
----
+
 
 ### Задание 2
-
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
-
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
-
-
----
-
-### Задание 3
-
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
-
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
-
-### Задание 4
-
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
-
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
-
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота](ссылка на скриншот)`
+![alt text](<img/Авторизация в админке.jpg>)
+![alt text](<img/Dashboard.jpg >)
+![alt text](<img/Finish install.jpg>)
+![alt text](img/latesdata.jpg)
+Так же все картинки имеются в папке img
+Список команд для выполнения 2 дз 
+wget https://repo.zabbix.com/zabbix/6.4/debian/pool/main/z/zabbix-release/zabbix-release_6.4-1+debian11_all.deb
+sudo dpkg -i zabbix-release_6.4-1+debian11_all.deb
+sudo apt update
+sudo apt install -y zabbix-agent
+sudo systemctl start zabbix-agent
+sudo systemctl enable zabbix-agent
+sudo systemctl status zabbix-agent
+sudo nano /etc/zabbix/zabbix_agentd.conf
+Server=<IP_сервера_Zabbix>
+Hostname=<имя_агента_в_интерфейсе_Zabbix>
+sudo systemctl restart zabbix-agent
