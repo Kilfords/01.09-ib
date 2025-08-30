@@ -34,5 +34,5 @@
 ![keepelived](img/keepelived.jpg)
 ![nginx](img/nginx.jpg)
 ![nanokeep](img/nanokeepelavied.jpg)
-![плавающийniginx](img/плавающий nignx.jpg)
+![плавающийniginx](img/плавающий%20nignx.jpg)
 ![башскрипт](img/script.jpg)
